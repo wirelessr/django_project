@@ -22,7 +22,6 @@ def new_topic(request, pk):
             topic = form.save(commit=False)
             topic.board = board
             topic.starter = user
-            print('user', user, '<<<')
             topic.save()
             post = Post.objects.create(
                 message=form.cleaned_data.get('message'),
